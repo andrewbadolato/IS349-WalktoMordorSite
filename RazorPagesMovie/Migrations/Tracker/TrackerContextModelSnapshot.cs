@@ -31,6 +31,8 @@ namespace RazorPagesMovie.Migrations.Tracker
 
                     b.Property<string>("OwnerID");
 
+                    b.Property<int>("Status");
+
                     b.HasKey("ID");
 
                     b.ToTable("Tracker");

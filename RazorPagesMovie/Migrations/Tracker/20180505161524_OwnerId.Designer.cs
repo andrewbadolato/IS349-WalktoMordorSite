@@ -8,11 +8,11 @@ using Microsoft.EntityFrameworkCore.Storage.Internal;
 using RazorPagesMovie.Models;
 using System;
 
-namespace RazorPagesMovie.Migrations
+namespace RazorPagesMovie.Migrations.Tracker
 {
-    [DbContext(typeof(MovieContext))]
-    [Migration("20180501010416_Rating")]
-    partial class Rating
+    [DbContext(typeof(TrackerContext))]
+    [Migration("20180505161524_OwnerId")]
+    partial class OwnerId
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -21,24 +21,22 @@ namespace RazorPagesMovie.Migrations
                 .HasAnnotation("ProductVersion", "2.0.2-rtm-10011")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("RazorPagesMovie.Models.Movie", b =>
+            modelBuilder.Entity("RazorPagesMovie.Models.Tracker", b =>
                 {
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("Genre");
+                    b.Property<DateTime>("Date");
 
-                    b.Property<decimal>("Price");
+                    b.Property<decimal>("Distance");
 
-                    b.Property<string>("Rating");
+                    b.Property<string>("OwnerID");
 
-                    b.Property<DateTime>("ReleaseDate");
-
-                    b.Property<string>("Title");
+                    b.Property<int>("Status");
 
                     b.HasKey("ID");
 
-                    b.ToTable("Movie");
+                    b.ToTable("Tracker");
                 });
 #pragma warning restore 612, 618
         }

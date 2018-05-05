@@ -19,24 +19,24 @@ namespace RazorPagesMovie
         {
             var host = BuildWebHost(args);
 
-            using (var scope = host.Services.CreateScope())
-            {
-                var services = scope.ServiceProvider;
+            //using (var scope = host.Services.CreateScope())
+            //{
+            //    var services = scope.ServiceProvider;
 
-                try
-                {
-                    var context = services.GetRequiredService<MovieContext>();
-                    // requires using Microsoft.EntityFrameworkCore;
-                    context.Database.Migrate();
-                    // Requires using RazorPagesMovie.Models;
-                    SeedData.Initialize(services);
-                }
-                catch (Exception ex)
-                {
-                    var logger = services.GetRequiredService<ILogger<Program>>();
-                    logger.LogError(ex, "An error occurred seeding the DB.");
-                }
-            }
+            //    try
+            //    {
+            //        var context = services.GetRequiredService<MovieContext>();
+            //        // requires using Microsoft.EntityFrameworkCore;
+            //        context.Database.Migrate();
+            //        // Requires using RazorPagesMovie.Models;
+            //        SeedData.Initialize(services);
+            //    }
+            //    catch (Exception ex)
+            //    {
+            //        var logger = services.GetRequiredService<ILogger<Program>>();
+            //        logger.LogError(ex, "An error occurred seeding the DB.");
+            //    }
+            //}
 
             host.Run();
 

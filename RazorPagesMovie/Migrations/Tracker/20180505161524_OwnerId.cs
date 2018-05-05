@@ -2,23 +2,24 @@
 using System;
 using System.Collections.Generic;
 
-namespace RazorPagesMovie.Migrations
+namespace RazorPagesMovie.Migrations.Tracker
 {
-    public partial class Rating : Migration
+    public partial class OwnerId : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.AddColumn<string>(
-                name: "Rating",
-                table: "Movie",
-                nullable: true);
+            migrationBuilder.AddColumn<int>(
+                name: "Status",
+                table: "Tracker",
+                nullable: false,
+                defaultValue: 0);
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropColumn(
-                name: "Rating",
-                table: "Movie");
+                name: "Status",
+                table: "Tracker");
         }
     }
 }

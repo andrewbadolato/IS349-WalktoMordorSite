@@ -24,5 +24,15 @@ namespace RazorPagesMovie.Models
         [Display(Name = "Distance Traveled")]
         public decimal Distance { get; set; }
 
+        //working through based on tutorial; modify once you can get this to work
+        public TrackerStatus Status { get; set; }
+    }
+
+    //working through based on tutorial; modify once you can get this to work
+    public enum TrackerStatus
+    {
+        Submitted,
+        Approved,
+        Rejected
     }
 }
