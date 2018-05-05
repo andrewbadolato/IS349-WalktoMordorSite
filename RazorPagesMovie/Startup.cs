@@ -40,6 +40,8 @@ namespace RazorPagesMovie
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddDbContext<MovieContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("MovieContext")));
+            services.AddDbContext<TrackerContext>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("TrackerContext")));
             services.AddMvc();
 
             services.AddIdentity<ApplicationUser, IdentityRole>()
