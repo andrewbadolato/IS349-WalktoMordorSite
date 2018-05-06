@@ -23,6 +23,12 @@ namespace RazorPagesMovie.Pages.track_distance
 
         public IActionResult OnGet()
         {
+
+            Tracker = new Tracker
+            {
+                Date = (DateTime.Today),
+            };
+
             return Page();
         }
 
