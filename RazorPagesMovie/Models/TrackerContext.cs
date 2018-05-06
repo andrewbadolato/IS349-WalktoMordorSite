@@ -16,4 +16,5 @@ namespace RazorPagesMovie.Models
         public DbSet<Tracker> Tracker { get; set; }
 
     }
+
 }

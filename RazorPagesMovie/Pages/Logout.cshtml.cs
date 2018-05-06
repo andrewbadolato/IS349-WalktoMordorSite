@@ -21,7 +21,7 @@ namespace RazorPagesMovie.Pages
         {
             await _signInManager.SignOutAsync();
             _logger.LogInformation("User logged out.");
-            return RedirectToPage("/Index");
+            return RedirectToPage("/Account/Login");
         }
     }
 }
