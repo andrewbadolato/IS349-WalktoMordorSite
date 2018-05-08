@@ -6,15 +6,15 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using RazorPagesMovie.Models;
+using WalktoMordor.Models;
 
-namespace RazorPagesMovie.Pages.track_distance
+namespace WalktoMordor.Pages.track_distance
 {
     public class EditModel : PageModel
     {
-        private readonly RazorPagesMovie.Models.TrackerContext _context;
+        private readonly WalktoMordor.Models.TrackerContext _context;
 
-        public EditModel(RazorPagesMovie.Models.TrackerContext context)
+        public EditModel(WalktoMordor.Models.TrackerContext context)
         {
             _context = context;
         }

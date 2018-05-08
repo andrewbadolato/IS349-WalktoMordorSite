@@ -5,10 +5,10 @@ using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage;
 using Microsoft.EntityFrameworkCore.Storage.Internal;
-using RazorPagesMovie.Data;
+using WalktoMordor.Data;
 using System;
 
-namespace RazorPagesMovie.Data.Migrations
+namespace WalktoMordor.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
     partial class ApplicationDbContextModelSnapshot : ModelSnapshot
@@ -128,7 +128,7 @@ namespace RazorPagesMovie.Data.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
-            modelBuilder.Entity("RazorPagesMovie.Data.ApplicationUser", b =>
+            modelBuilder.Entity("WalktoMordor.Data.ApplicationUser", b =>
                 {
                     b.Property<string>("Id")
                         .ValueGeneratedOnAdd();
@@ -179,7 +179,7 @@ namespace RazorPagesMovie.Data.Migrations
                     b.ToTable("AspNetUsers");
                 });
 
-            modelBuilder.Entity("RazorPagesMovie.Models.Tracker", b =>
+            modelBuilder.Entity("WalktoMordor.Models.Tracker", b =>
                 {
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd();
@@ -205,7 +205,7 @@ namespace RazorPagesMovie.Data.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
                 {
-                    b.HasOne("RazorPagesMovie.Data.ApplicationUser")
+                    b.HasOne("WalktoMordor.Data.ApplicationUser")
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade);
@@ -213,7 +213,7 @@ namespace RazorPagesMovie.Data.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
                 {
-                    b.HasOne("RazorPagesMovie.Data.ApplicationUser")
+                    b.HasOne("WalktoMordor.Data.ApplicationUser")
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade);
@@ -226,7 +226,7 @@ namespace RazorPagesMovie.Data.Migrations
                         .HasForeignKey("RoleId")
                         .OnDelete(DeleteBehavior.Cascade);
 
-                    b.HasOne("RazorPagesMovie.Data.ApplicationUser")
+                    b.HasOne("WalktoMordor.Data.ApplicationUser")
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade);
@@ -234,7 +234,7 @@ namespace RazorPagesMovie.Data.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
                 {
-                    b.HasOne("RazorPagesMovie.Data.ApplicationUser")
+                    b.HasOne("WalktoMordor.Data.ApplicationUser")
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade);

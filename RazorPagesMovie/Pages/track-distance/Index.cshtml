@@ -1,13 +1,47 @@
 @page
-@model RazorPagesMovie.Pages.track_distance.IndexModel
+@model WalktoMordor.Pages.track_distance.IndexModel
+@using WalktoMordor.Models
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Track Your Progress";
 }
 
-<h2>Index</h2>
+@{
+    //Retrieves locations based on current distance traveled
 
+    decimal distTotal = Model.Tracker.Sum(s => s.Distance);
+
+    Location newLocation = new Location(distTotal);
+
+    newLocation.FindLocations(distTotal);
+    newLocation.CalcProgress(distTotal);
+
+}
+
+<h2>Your Progress</h2>
+
+You are @newLocation.CheckpointProgress% of the way to @newLocation.EndLocation
+<div class="progress">
+    <div class="progress-bar progress-bar-success" role="progressbar" style="width: @newLocation.CheckpointProgress%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
+
+You are @newLocation.TotalProgress% through your journey
+<div class="progress">
+    <div class="progress-bar progress-bar-warning" role="progressbar" style="width: @newLocation.TotalProgress%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
+
+<ul>
+    <li>
+        You have traveled <strong>@distTotal miles</strong>, placing you between <strong>@newLocation.StartLocation</strong> and <strong>@newLocation.EndLocation</strong>
+    </li>
+    <li>
+        Only <strong>@(newLocation.EndMiles - distTotal) of @newLocation.EndMiles</strong> miles to go before you reach <strong>@newLocation.EndLocation</strong>!
+    </li>
+</ul>
+
+<h2>Travel Log</h2>
+<p>You have made @Model.Tracker.Count() entries in your log.</p>
 <p>
-    <a asp-page="Create" class="btn btn-primary">Create New</a>
+    <a asp-page="Create" class="btn btn-success">Add Your Progress</a>
 </p>
 <table class="table">
     <thead>
@@ -32,20 +66,18 @@
                     @Html.DisplayFor(modelItem => item.Distance)
                 </td>
                 <td>
-                    <a asp-page="./Edit" asp-route-id="@item.ID" class="btn btn-primary btn-xs">Edit</a>
-                    <a asp-page="./Details" asp-route-id="@item.ID" class="btn btn-primary btn-xs">Details</a>
-                    <a asp-page="./Delete" asp-route-id="@item.ID" class="btn btn-primary btn-xs">Delete</a>
-                </td>
+                    <div class="btn-group" role="group" aria-label="Basic example">
+                        <a asp-page="./Edit" asp-route-id="@item.ID" class="btn btn-success btn-xs">Edit</a>
+                        <a asp-page="./Details" asp-route-id="@item.ID" class="btn btn-success btn-xs">Details</a>
+                        <a asp-page="./Delete" asp-route-id="@item.ID" class="btn btn-success btn-xs">Delete</a>
+                        </div>
+</td>
             </tr>
         }
     </tbody>
 </table>
 
-<p>
-    @Model.Tracker.Count()
-</p>
-<p>
-    @Model.Tracker.Sum(s => s.Distance)
-</p>
+
+
 
 

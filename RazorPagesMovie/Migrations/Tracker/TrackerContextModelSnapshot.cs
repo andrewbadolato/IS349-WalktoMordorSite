@@ -5,10 +5,10 @@ using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage;
 using Microsoft.EntityFrameworkCore.Storage.Internal;
-using RazorPagesMovie.Models;
 using System;
+using WalktoMordor.Models;
 
-namespace RazorPagesMovie.Migrations.Tracker
+namespace WalktoMordor.Migrations.Tracker
 {
     [DbContext(typeof(TrackerContext))]
     partial class TrackerContextModelSnapshot : ModelSnapshot
@@ -17,10 +17,30 @@ namespace RazorPagesMovie.Migrations.Tracker
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "2.0.2-rtm-10011")
+                .HasAnnotation("ProductVersion", "2.0.3-rtm-10026")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("RazorPagesMovie.Models.Tracker", b =>
+            modelBuilder.Entity("WalktoMordor.Models.Location", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<decimal>("DistTotal");
+
+                    b.Property<string>("EndLocation");
+
+                    b.Property<decimal>("EndMiles");
+
+                    b.Property<string>("StartLocation");
+
+                    b.Property<decimal>("StartMiles");
+
+                    b.HasKey("ID");
+
+                    b.ToTable("Location");
+                });
+
+            modelBuilder.Entity("WalktoMordor.Models.Tracker", b =>
                 {
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd();

@@ -1,5 +1,5 @@
 @page
-@model RazorPagesMovie.Pages.track_distance.CreateModel
+@model WalktoMordor.Pages.track_distance.CreateModel
 
 @{
     ViewData["Title"] = "Create";
@@ -24,9 +24,11 @@
                 <span asp-validation-for="Tracker.Distance" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-                <a asp-page="Index" class="btn btn-primary">Back to List</a>
-            </div>
+                <div class="btn-group" role="group" aria-label="Basic example">
+                    <input type="submit" value="Create" class="btn btn-success" />
+                    <a asp-page="Index" class="btn btn-success">Back to List</a>
+                </div>
+                </div>
         </form>
     </div>
 </div>

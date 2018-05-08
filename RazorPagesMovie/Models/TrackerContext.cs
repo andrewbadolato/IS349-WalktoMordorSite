@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace RazorPagesMovie.Models
+namespace WalktoMordor.Models
 {
     public class TrackerContext : DbContext
     {
@@ -14,6 +14,7 @@ namespace RazorPagesMovie.Models
         }
 
         public DbSet<Tracker> Tracker { get; set; }
+        public DbSet<Location> Location { get; set; }
 
     }
 

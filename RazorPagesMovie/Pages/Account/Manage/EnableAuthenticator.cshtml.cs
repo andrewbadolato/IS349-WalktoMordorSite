@@ -10,9 +10,9 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
-using RazorPagesMovie.Data;
+using WalktoMordor.Data;
 
-namespace RazorPagesMovie.Pages.Account.Manage
+namespace WalktoMordor.Pages.Account.Manage
 {
     public class EnableAuthenticatorModel : PageModel
     {
@@ -131,7 +131,7 @@ namespace RazorPagesMovie.Pages.Account.Manage
         {
             return string.Format(
                 AuthenticatorUriFormat,
-                _urlEncoder.Encode("RazorPagesMovie"),
+                _urlEncoder.Encode("WalktoMordor"),
                 _urlEncoder.Encode(email),
                 unformattedKey);
         }

@@ -7,10 +7,10 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
-using RazorPagesMovie.Data;
-using RazorPagesMovie.Models;
+using WalktoMordor.Data;
+using WalktoMordor.Models;
 
-namespace RazorPagesMovie.Pages
+namespace WalktoMordor.Pages
 {
     public class AboutModel : PageModel
     {

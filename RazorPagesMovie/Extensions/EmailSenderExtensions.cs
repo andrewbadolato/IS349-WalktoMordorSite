@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text.Encodings.Web;
 using System.Threading.Tasks;
-using RazorPagesMovie.Services;
+using WalktoMordor.Services;
 
-namespace RazorPagesMovie.Services
+namespace WalktoMordor.Services
 {
     public static class EmailSenderExtensions
     {

@@ -16,7 +16,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "RazorPagesMovie": {
+    "WalktoMordor": {
       "commandName": "Project",
       "launchBrowser": true,
       "environmentVariables": {

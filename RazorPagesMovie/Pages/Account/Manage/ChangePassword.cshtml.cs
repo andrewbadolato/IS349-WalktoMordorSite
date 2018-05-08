@@ -7,9 +7,9 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
-using RazorPagesMovie.Data;
+using WalktoMordor.Data;
 
-namespace RazorPagesMovie.Pages.Account.Manage
+namespace WalktoMordor.Pages.Account.Manage
 {
     public class ChangePasswordModel : PageModel
     {

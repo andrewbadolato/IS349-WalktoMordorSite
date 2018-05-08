@@ -8,10 +8,10 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using RazorPagesMovie.Models;
+using WalktoMordor.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace RazorPagesMovie
+namespace WalktoMordor
 {
     public class Program
     {
@@ -28,7 +28,7 @@ namespace RazorPagesMovie
             //        var context = services.GetRequiredService<TrackerContext>();
             //        // requires using Microsoft.EntityFrameworkCore;
             //        context.Database.Migrate();
-            //        // Requires using RazorPagesMovie.Models;
+            //        // Requires using WalktoMordor.Models;
             //        SeedData.Initialize(services);
             //    }
             //    catch (Exception ex)

@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
-namespace RazorPagesMovie.Data
+namespace WalktoMordor.Data
 {
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {

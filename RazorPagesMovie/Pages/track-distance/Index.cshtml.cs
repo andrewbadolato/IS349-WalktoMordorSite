@@ -5,22 +5,24 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
-using RazorPagesMovie.Models;
+using WalktoMordor.Models;
 
 
-namespace RazorPagesMovie.Pages.track_distance
+namespace WalktoMordor.Pages.track_distance
 {
     public class IndexModel : PageModel
     {
-        private readonly RazorPagesMovie.Models.TrackerContext _context;
+        private readonly WalktoMordor.Models.TrackerContext _context;
         private String currentUserID;
+        private decimal distTotal;
 
-        public IndexModel(RazorPagesMovie.Models.TrackerContext context)
+        public IndexModel(WalktoMordor.Models.TrackerContext context)
         {
             _context = context;
         }
 
         public IList<Tracker> Tracker { get; set; }
+        public IList<Location> Location { get; set; }
 
 
         public async Task OnGetAsync()
@@ -50,7 +52,10 @@ namespace RazorPagesMovie.Pages.track_distance
                 DistTotal = distGroup.Sum(s => s.Distance)
             };
 
+                
+
             }
+
 
             else
             {

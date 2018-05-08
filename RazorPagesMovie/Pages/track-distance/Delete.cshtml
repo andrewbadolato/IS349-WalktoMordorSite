@@ -1,5 +1,5 @@
 @page
-@model RazorPagesMovie.Pages.track_distance.DeleteModel
+@model WalktoMordor.Pages.track_distance.DeleteModel
 
 @{
     ViewData["Title"] = "Delete";
@@ -31,10 +31,11 @@
             @Html.DisplayFor(model => model.Tracker.Distance)
         </dd>
     </dl>
-    
     <form method="post">
         <input type="hidden" asp-for="Tracker.ID" />
-        <input type="submit" value="Delete" class="btn btn-primary" />
-        <a asp-page="./Index" class="btn btn-primary">Back to List</a>
+        <div class="btn-group" role="group" aria-label="Basic example">
+            <input type="submit" value="Delete" class="btn btn-success" />
+            <a asp-page="./Index" class="btn btn-success">Back to List</a>
+        </div>
     </form>
 </div>

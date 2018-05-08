@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using RazorPagesMovie.Data;
+using WalktoMordor.Data;
 
-namespace RazorPagesMovie.Pages.Account
+namespace WalktoMordor.Pages.Account
 {
     public class ResetPasswordModel : PageModel
     {

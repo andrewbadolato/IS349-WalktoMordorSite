@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using RazorPagesMovie.Data;
-using RazorPagesMovie.Services;
+using WalktoMordor.Data;
+using WalktoMordor.Services;
 
-namespace RazorPagesMovie.Pages.Account.Manage
+namespace WalktoMordor.Pages.Account.Manage
 {
     public partial class IndexModel : PageModel
     {

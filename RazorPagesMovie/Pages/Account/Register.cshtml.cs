@@ -7,10 +7,10 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
-using RazorPagesMovie.Data;
-using RazorPagesMovie.Services;
+using WalktoMordor.Data;
+using WalktoMordor.Services;
 
-namespace RazorPagesMovie.Pages.Account
+namespace WalktoMordor.Pages.Account
 {
     public class RegisterModel : PageModel
     {

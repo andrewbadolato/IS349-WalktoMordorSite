@@ -5,10 +5,10 @@ using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage;
 using Microsoft.EntityFrameworkCore.Storage.Internal;
-using RazorPagesMovie.Models;
+using WalktoMordor.Models;
 using System;
 
-namespace RazorPagesMovie.Migrations.Tracker
+namespace WalktoMordor.Migrations.Tracker
 {
     [DbContext(typeof(TrackerContext))]
     [Migration("20180508013436_editdist")]
@@ -21,7 +21,7 @@ namespace RazorPagesMovie.Migrations.Tracker
                 .HasAnnotation("ProductVersion", "2.0.2-rtm-10011")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("RazorPagesMovie.Models.Tracker", b =>
+            modelBuilder.Entity("WalktoMordor.Models.Tracker", b =>
                 {
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd();

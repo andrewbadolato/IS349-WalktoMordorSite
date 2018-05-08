@@ -6,9 +6,9 @@ using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using RazorPagesMovie.Data;
+using WalktoMordor.Data;
 
-namespace RazorPagesMovie.Pages.Account.Manage
+namespace WalktoMordor.Pages.Account.Manage
 {
     public class ExternalLoginsModel : PageModel
     {

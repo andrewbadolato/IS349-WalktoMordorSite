@@ -7,16 +7,16 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using RazorPagesMovie.Data;
-using RazorPagesMovie.Models;
+using WalktoMordor.Data;
+using WalktoMordor.Models;
 
-namespace RazorPagesMovie.Pages.track_distance
+namespace WalktoMordor.Pages.track_distance
 {
     public class CreateModel : PageModel
     {
-        private readonly RazorPagesMovie.Models.TrackerContext _context;
+        private readonly WalktoMordor.Models.TrackerContext _context;
 
-        public CreateModel(RazorPagesMovie.Models.TrackerContext context)
+        public CreateModel(WalktoMordor.Models.TrackerContext context)
         {
             _context = context;
         }

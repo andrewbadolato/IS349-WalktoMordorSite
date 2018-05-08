@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace RazorPagesMovie.Migrations.Tracker
+namespace WalktoMordor.Migrations.Tracker
 {
     public partial class distancecalcs : Migration
     {

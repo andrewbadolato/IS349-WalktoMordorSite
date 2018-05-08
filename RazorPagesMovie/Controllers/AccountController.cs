@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using RazorPagesMovie.Data;
+using WalktoMordor.Data;
 
-namespace RazorPagesMovie.Controllers
+namespace WalktoMordor.Controllers
 {
     [Route("[controller]/[action]")]
     public class AccountController : Controller

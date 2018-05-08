@@ -9,13 +9,13 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using RazorPagesMovie.Data;
-using RazorPagesMovie.Services;
-using RazorPagesMovie.Models;
+using WalktoMordor.Data;
+using WalktoMordor.Services;
+using WalktoMordor.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Rewrite;
 
-namespace RazorPagesMovie
+namespace WalktoMordor
 {
     public class Startup
     {

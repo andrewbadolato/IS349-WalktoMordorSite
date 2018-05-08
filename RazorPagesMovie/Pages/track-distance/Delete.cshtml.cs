@@ -5,15 +5,15 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
-using RazorPagesMovie.Models;
+using WalktoMordor.Models;
 
-namespace RazorPagesMovie.Pages.track_distance
+namespace WalktoMordor.Pages.track_distance
 {
     public class DeleteModel : PageModel
     {
-        private readonly RazorPagesMovie.Models.TrackerContext _context;
+        private readonly WalktoMordor.Models.TrackerContext _context;
 
-        public DeleteModel(RazorPagesMovie.Models.TrackerContext context)
+        public DeleteModel(WalktoMordor.Models.TrackerContext context)
         {
             _context = context;
         }
