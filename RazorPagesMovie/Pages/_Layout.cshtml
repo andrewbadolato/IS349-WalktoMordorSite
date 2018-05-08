@@ -3,27 +3,23 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - Movie</title>
+    <title>@ViewData["Title"] - Final Project</title>
 
     <environment include="Development">
-        @*<link rel="stylesheet" href="~/css/bootstrap-simplex.css" />*@
+        <link rel="stylesheet" href="~/css/gsdk.css" />
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
         <link rel="stylesheet" href="~/css/site.css" />
     </environment>
     <environment exclude="Development">
-        @*<link rel="stylesheet" href="~/css/bootstrap-simplex.min.css"
-              asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"*@
-              <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css"
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css"
               asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
         <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
     </environment>
 </head>
 <body>
-    @*<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-        <a asp-page="/Index" class="navbar-brand">RazorPagesMovie (IS 349 Final Project)</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation" style="">
-            <span class="navbar-toggler-icon"></span>
-        </button>*@
+    <div class="container-fluid">
+        <img src="~/images/path.jpg" alt="PATH" class="img-responsive" />
+    </div>
 
     <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
@@ -47,33 +43,20 @@
         </div>
     </nav>
 
-    @*<div class="collapse navbar-collapse" id="navbarColor01">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                    <a asp-page="/Movies/Index" class="nav-link">Movies Database</a>
-                </li>
-                <li class="nav-item">
-                    <a asp-page="/Schedules/Index" class="nav-link">Schedules</a>
-                </li>
-                <li class="nav-item">
-                    <a asp-page="/About" class="nav-link">About</a>
-                </li>
-                <li class="nav-item">
-                    <a asp-page="/Contact" class="nav-link">Contact</a>
-                </li>
-            </ul>
-            @await Html.PartialAsync("_LoginPartial")
+    <div class="container">
+        <div class="page-header">
+            <h1>Example page header <small>Subtext for header</small></h1>
         </div>
-        </nav>*@
 
-    <div class="container body-content">
         @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; 2018 - RazorPagesMovie</p>
-        </footer>
-    </div>
 
+        <hr />
+
+        <footer>
+                <p>&copy; 2018 <br />
+                <a asp-page="About">Credits and acknowledgements</a></p>
+        </footer>
+        </div>    
     <environment include="Development">
         <script src="~/lib/jquery/dist/jquery.js"></script>
         <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>

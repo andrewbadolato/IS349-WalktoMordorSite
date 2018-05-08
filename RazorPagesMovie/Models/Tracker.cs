@@ -1,10 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
-using System.ComponentModel;
 
 namespace RazorPagesMovie.Models
 {
@@ -23,6 +18,14 @@ namespace RazorPagesMovie.Models
 
         [Display(Name = "Distance Traveled")]
         public decimal Distance { get; set; }
+
+
+        [Display(Name = "Number of Entries")]
+        public int DistCount { get; set; }
+
+        [Display(Name = "Total Distance Traveled")]
+        public decimal DistTotal { get; set; }
+
 
     }
 }

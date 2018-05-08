@@ -1,6 +1,5 @@
 @page
 @model RazorPagesMovie.Pages.track_distance.IndexModel
-
 @{
     ViewData["Title"] = "Index";
 }
@@ -8,35 +7,45 @@
 <h2>Index</h2>
 
 <p>
-    <a asp-page="Create">Create New</a>
+    <a asp-page="Create" class="btn btn-primary">Create New</a>
 </p>
 <table class="table">
     <thead>
         <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.Tracker[0].Date)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Tracker[0].Distance)
-                </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tracker[0].Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tracker[0].Distance)
+            </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model.Tracker) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Date)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Distance)
-            </td>
-            <td>
-                <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model.Tracker)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Date)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Distance)
+                </td>
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@item.ID" class="btn btn-primary btn-xs">Edit</a>
+                    <a asp-page="./Details" asp-route-id="@item.ID" class="btn btn-primary btn-xs">Details</a>
+                    <a asp-page="./Delete" asp-route-id="@item.ID" class="btn btn-primary btn-xs">Delete</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
+
+<p>
+    @Model.Tracker.Count()
+</p>
+<p>
+    @Model.Tracker.Sum(s => s.Distance)
+</p>
+
+

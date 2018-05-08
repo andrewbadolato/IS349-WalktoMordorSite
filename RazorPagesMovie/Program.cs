@@ -25,7 +25,7 @@ namespace RazorPagesMovie
 
             //    try
             //    {
-            //        var context = services.GetRequiredService<MovieContext>();
+            //        var context = services.GetRequiredService<TrackerContext>();
             //        // requires using Microsoft.EntityFrameworkCore;
             //        context.Database.Migrate();
             //        // Requires using RazorPagesMovie.Models;

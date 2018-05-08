@@ -3,18 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
-using RazorPagesMovie.Data;
 using RazorPagesMovie.Models;
+
 
 namespace RazorPagesMovie.Pages.track_distance
 {
     public class IndexModel : PageModel
     {
         private readonly RazorPagesMovie.Models.TrackerContext _context;
+        private String currentUserID;
 
         public IndexModel(RazorPagesMovie.Models.TrackerContext context)
         {
@@ -23,42 +22,42 @@ namespace RazorPagesMovie.Pages.track_distance
 
         public IList<Tracker> Tracker { get; set; }
 
-        //public async Task OnGetAsync()
-        //{
-        //    Tracker = await _context.Tracker.ToListAsync();
-        //}
-
 
         public async Task OnGetAsync()
         {
-            ClaimsPrincipal currentUser = this.User;
-            var currentUserID = currentUser.FindFirst(ClaimTypes.NameIdentifier).Value;
 
-            var entries = from t in _context.Tracker
-                          select t;
+            //this if...else statement does not prevent NullReferenceException when user not logged in - must fix
+            if (User.Identity.IsAuthenticated)
+            {
+                ClaimsPrincipal currentUser = User;
+                currentUserID = currentUser.FindFirst(ClaimTypes.NameIdentifier).Value.ToString();
 
-            entries = entries.Where(t => t.OwnerID.Equals(currentUserID));
+                var entries = from t in _context.Tracker
+                              select t;
 
-            Tracker = await entries.ToListAsync();
+                entries = entries.Where(t => t.OwnerID.Equals(currentUserID));
+
+                Tracker = await entries.ToListAsync();
+
+
+            //Calculates current entry count and total distance
+            IEnumerable<Tracker> data =
+            from Tracker in Tracker
+            group Tracker by Tracker into distGroup
+            select new Tracker()
+            {
+                DistCount = distGroup.Count(),
+                DistTotal = distGroup.Sum(s => s.Distance)
+            };
+
+            }
+
+            else
+            {
+                RedirectToPage("/Account/Login");
+            }
+
         }
-
-
-
-        // Use LINQ to get list of genres.
-        //IQueryable<string> genreQuery = from m in _context.Tracker
-        //                                select m.user;
-
-
-        //var movies = from m in _context.Tracker
-        //             select m;
-
-        //if (!String.IsNullOrEmpty(userID))
-        //{
-        //    movies = movies.Where(x => x.OwnerID == currentUserID;
-        //}
-        //Genres = new SelectList(await genreQuery.Distinct().ToListAsync());
-        //Movie = await movies.ToListAsync();
-        //}
     }
 }
-   
+
