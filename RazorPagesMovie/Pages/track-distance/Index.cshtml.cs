@@ -25,7 +25,7 @@ namespace WalktoMordor.Pages.track_distance
         public IList<Location> Location { get; set; }
 
 
-        public async Task OnGetAsync()
+        public async Task OnGetAsync(string sortOrder)
         {
 
             //this if...else statement does not prevent NullReferenceException when user not logged in - must fix
@@ -39,7 +39,7 @@ namespace WalktoMordor.Pages.track_distance
 
                 entries = entries.Where(t => t.OwnerID.Equals(currentUserID));
 
-                Tracker = await entries.ToListAsync();
+                Tracker = await entries.AsNoTracking().ToListAsync();
 
 
             //Calculates current entry count and total distance
@@ -52,10 +52,7 @@ namespace WalktoMordor.Pages.track_distance
                 DistTotal = distGroup.Sum(s => s.Distance)
             };
 
-                
-
             }
-
 
             else
             {
