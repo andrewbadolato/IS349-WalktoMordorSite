@@ -2,13 +2,11 @@
 @model WalktoMordor.Pages.track_distance.CreateModel
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Add Your Distance Traveled";
 }
 
-<h2>Create</h2>
+<h2 class="text-warning">Add Your Distance Traveled</h2>
 
-<h4>Tracker</h4>
-<hr />
 <div class="row">
     <div class="col-md-4">
         <form method="post">
@@ -25,8 +23,8 @@
             </div>
             <div class="form-group">
                 <div class="btn-group" role="group" aria-label="Basic example">
-                    <input type="submit" value="Create" class="btn btn-success" />
-                    <a asp-page="Index" class="btn btn-success">Back to List</a>
+                    <input type="submit" value="Create" class="btn btn-warning" />
+                    <a asp-page="Index" class="btn btn-warning">Back to List</a>
                 </div>
                 </div>
         </form>

@@ -34,9 +34,8 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a asp-page="/track-distance/Index">Track Your Distance</a></li>
-                    <li><a asp-page="/About">About</a></li>
-                    <li><a asp-page="/Contact">Contact</a></li>
+                    <li><a asp-page="/track-distance/Index">Track Your Progress</a></li>
+                    <li><a asp-page="/About">About/Credits</a></li>
                 </ul>
                 @await Html.PartialAsync("_LoginPartial")
             </div>
@@ -45,7 +44,7 @@
 
     <div class="container">
         <div class="page-header">
-            <h1>Example page header <small>Subtext for header</small></h1>
+            <h1 class="text-warning">Walk to Mordor <small>Another walking challenge tracker</small></h1>
         </div>
 
         @RenderBody()
@@ -53,8 +52,8 @@
         <hr />
 
         <footer>
-                <p>&copy; 2018 <br />
-                <a asp-page="About">Credits and acknowledgements</a></p>
+                <p>Site created 2018 (IS 349 Final Project) | 
+                <a asp-page="About">Content credits and acknowledgements</a></p>
         </footer>
         </div>    
     <environment include="Development">

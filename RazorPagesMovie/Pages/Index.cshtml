@@ -1,20 +1,49 @@
 ﻿@page
 @model IndexModel
 @{
-    ViewData["Title"] = "Home page";
+    ViewData["Title"] = "Walk to Mordor Challenge";
 }
 
 
 <div class="row">
     <div class="col-md-8">
-        <h2>Application uses</h2>
+        <p>The Walk to Mordor challenge appeared on message boards and the <a href="http://home.insightbb.com/~eowynchallenge/Walk/walk.html">Eowyn Challenge</a> website around the time the
+        Peter Jackson Lord of the Rings movies released in the early 2000s. Over the past few years, <a href="https://www.nerdfitness.com/blog/walking/">
+    it has gained attention again</a> as a fitness challenge for Tolkien nerds.</p>
+        <h2 class="text-warning">The Challenge</h2>
+        <p>The challenge is broken down into the following milestones:</p>
         <ul>
-            <li>Sample pages using ASP.NET Core Razor Pages</li>
-            <li>Theming using <a href="https://go.microsoft.com/fwlink/?LinkID=398939">Bootstrap</a></li>
+            <li>
+                458 miles: Go from Hobbiton to Rivendell.
+            </li>
+            <li>
+                462 miles: Set out with the Fellowship from Rivendell, through Moria, to Lothlorien.
+            </li>
+            <li>
+                389 miles: From Lothlorien, down the Anduin, to Rauros Falls.
+            </li>
+            <li>
+                470 miles: Follow Frodo and Sam on the quest from Rauros to Mt. Doom.
+            </li>
+            <li>
+                535 miles: From Minas Tirith to Isengard
+            </li>
+            <li>
+                693 miles: From Isengard to Rivendell.
+            </li>
+            <li>
+                397 miles: From Rivendell to Bag End.
+            </li>
+            <li>
+                467 miles: Follow Frodo to the Grey Havens and return home with Sam.
+            </li>
         </ul>
+        <h2 class="text-warning">Track Your Progress</h2>
+        <p>You can keep track of the distance you've traveled and where you are by <a asp-page="/Account/Register">registering</a> and entering the
+        number of miles you've walked today in the <a asp-page="/track-distance/Index">distance tracker</a>.</p>
     </div>
     <div class="col-md-4">
-        <h2>Twitter</h2>
+        <h2 class="text-warning">Walk to Mordor Challenge on Twitter</h2>
         <a href="https://twitter.com/intent/tweet?button_hashtag=WalktoMordor&ref_src=twsrc%5Etfw" class="twitter-hashtag-button" data-lang="en" data-show-count="false">Tweet #WalktoMordor</a>
         <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
         <a class="twitter-timeline" href="https://twitter.com/hashtag/WalktoMordor" data-widget-id="992876611400847360">#WalktoMordor Tweets</a>
